@@ -1,62 +1,79 @@
+<!-- connect to parent template-->
 {% extends "base.html" %}
 
+<!-- page title using parent template-->
 {% block page_title %}Sign Up{% endblock %}
 
+<!-- page head using parent template-->
 {% block page_head %}Sign Up{% endblock %}
 
+<!-- page content using parent template-->
 {% block page_content %}
 
+    <!-- if statement to display new screen once form has been completed-->
   {% if form_submitted %}
+      <!-- display well formatted input from form-->
       <div class="mb-3">
         <h2>Thank you for completing the form!</h2>
       </div>
       <div class="mb-3">
           <p><b>First Name:</b></p>
       </div>
+      <!-- display first name input from form-->
       <div class="mb-3">
         <p>{{ request.form.get('first_name') }}</p>
       </div>
       <div class="mb-3">
           <p><b>Last Name:</b></p>
       </div>
+      <!-- display last name input from form-->
       <div class="mb-3">
         <p>{{ request.form.get('last_name') }}</p>
       </div>
       <div class="mb-3">
           <p><b>Email:</b></p>
       </div>
+      <!-- display email input from form-->
       <div class="mb-3">
         <p>{{ request.form.get('email') }}</p>
       </div>
        <div class="mb-3">
            <p><b>Username:</b></p>
       </div>
+      <!-- display username input from form-->
       <div class="mb-3">
         <p>{{ request.form.get('username') }}</p>
       </div>
 
+      <!-- else statement to display the form before it has been completed-->
   {% else %}
 
 <form class="row g-3" action={{ url_for('contact') }} method="post">
+    <!-- provide input box for first name-->
     <div class="mb-3">
       <label for="exampleFormControlTextarea1" class="form-label">First Name</label>
       <textarea class="form-control" id="exampleFormControlTextarea1" name="first_name" placeholder="First Name" rows="1"></textarea>
     </div>
+    <!-- provide input box for last name-->
     <div class="mb-3">
       <label for="exampleFormControlTextarea1" class="form-label">Last Name</label>
       <textarea class="form-control" id="exampleFormControlTextarea1" name="last_name" placeholder="Last Name" rows="1"></textarea>
     </div>
+    <!-- provide input box for email-->
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Email</label>
       <input type="email" class="form-control" id="exampleFormControlInput1" name="email" placeholder="xyz@gmail.com">
     </div>
+    <!-- provide input box for username-->
     <div class="mb-3">
       <label for="exampleFormControlTextarea1" class="form-label">Username</label>
       <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Username" name="username" rows="1"></textarea>
     </div>
+    <!-- provide submit button-->
     <div class="col-12">
         <button class="btn btn-primary" type="submit">Submit</button>
     </div>
   </form>
     {% endif %}
+    <!-- end page content from parent template-->
 {% endblock %}

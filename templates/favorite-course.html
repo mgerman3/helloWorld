@@ -1,10 +1,13 @@
+<!-- connect to parent template-->
 {% extends "base.html" %}
 
-
+<!-- page title using parent template-->
 {% block page_title %}Favorite Course{% endblock %}
 
+<!-- page head using parent template-->
 {% block page_head %}Greetings{% endblock %}
 
+<!-- page content using parent template-->
 {% block page_content %}
     <p>You entered your favorite course as: {{ request.args.get('subject') }}{{ request.args.get('course_number') }}</p>
 {% endblock %}
