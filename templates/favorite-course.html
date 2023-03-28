@@ -9,5 +9,6 @@
 
 <!-- page content using parent template-->
 {% block page_content %}
+    <!-- display users input favorite course subject and course number-->
     <p>You entered your favorite course as: {{ request.args.get('subject') }}{{ request.args.get('course_number') }}</p>
 {% endblock %}
