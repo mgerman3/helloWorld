@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
-    <title>Bootstrap Example</title>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-  </head>
-  <body class="p-3 m-0 border-0 bd-example">
+{% extends "base.html" %}
 
-  <h1>Sign Up</h1>
+{% block page_title %}Sign Up{% endblock %}
+
+{% block page_head %}Sign Up{% endblock %}
+
+{% block page_content %}
+
   {% if form_submitted %}
       <div class="mb-3">
         <h2>Thank you for completing the form!</h2>
@@ -20,25 +15,25 @@
       </div>
       <div class="mb-3">
         <p>{{ request.form.get('first_name') }}</p>
-<     </div>
+      </div>
       <div class="mb-3">
         <p>Last Name:</p>
       </div>
       <div class="mb-3">
         <p>{{ request.form.get('last_name') }}</p>
-<     </div>
+      </div>
       <div class="mb-3">
         <p>Email:</p>
       </div>
       <div class="mb-3">
         <p>{{ request.form.get('email') }}</p>
-<     </div>
+      </div>
        <div class="mb-3">
         <p>Username:</p>
       </div>
       <div class="mb-3">
         <p>{{ request.form.get('username') }}</p>
-<     </div>
+      </div>
 
   {% else %}
 
@@ -64,6 +59,4 @@
     </div>
   </form>
     {% endif %}
-  </body>
-
-</html>
+{% endblock %}
